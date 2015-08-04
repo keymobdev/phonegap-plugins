@@ -5,23 +5,22 @@ Support rich forms of advertising, including the popular  banner  a variety of s
 Ad config can been managed in  www.keymob.com ,  modify and adjust easy, you can config keymob with json format file , and then put it in  the project or on the website.<br/>
 
 
- ### 1. Download and install the library files <br/>
+### 1. Download and install the library files <br/>
    Download Keymobplugin and  extract to d:\keymobplugin<br/>
    Use the following command to install the Keymob Plugin from local location<br/>
 
 	cordova plugin add d:\keymobplugin
    
-      keymob will been installed to the project, and you can  used keymob cross-promotion and  home advertising ,but if you want to display ads from network such as admob need to add  third-party SDK<br/>
+keymob will been installed to the project, and you can  used keymob cross-promotion and  home advertising ,but if you want to display ads from network such as admob need to add  third-party SDK<br/>
    
-      Keymob will integrate third-party ad on server,without having to add third-party SDK,to ensure app can load ad success when ,<br/>
-      you can copy one plugin lib from "keymobplugin\sdk\android\"  to assets "assets\com_keymob_sdks\"<br/>
-   Note: jar file name can not be modified<br/>
+For Android Keymob will integrate third-party ad on server,without having to add third-party SDK,to ensure app can load ad success when ,you can copy one plugin lib from "keymobplugin\sdk\android\"  to assets "assets\com_keymob_sdks\"<br/>
+Note: jar file name can not be modified<br/>
 
-      For IOS app,Third-party platform SDK is under folder "keymobplugin\sdk\ios\".<br/>
-      Right click project in Xcode and choose menu "Add Files to Project" add platform related folder to xcode project.<br/>
-      Then add "Other Linker Flag" item of xcode project.<br/>
-      e.g. You used Admob ,add a item like following.<br/>
-      -force_load {your path contain keymob} /keymobplugin/sdk/ios/Admob/libAdmobAdapter.a  <br/>
+For IOS app,Third-party platform SDK is under folder "keymobplugin\sdk\ios\".<br/>
+Right click project in Xcode and choose menu "Add Files to Project" add platform related folder to xcode project.<br/>
+Then add "Other Linker Flag" item of xcode project.<br/>
+e.g. You used Admob ,add a item like following.<br/>
+-force_load {your path contain keymob} /keymobplugin/sdk/ios/Admob/libAdmobAdapter.a  <br/>
 
 ###  2.Add Code
 
@@ -29,18 +28,15 @@ Ad config can been managed in  www.keymob.com ,  modify and adjust easy, you can
 ```
 	keymob.initFromJSON(jsonString);
 ```
-   The first parameter  is context active, it as necessary, and can not be null.<br/>
-  The second parameter is the config info of each platform in json string format,json format reference template.<br/>
-  The third parameter is   event listener of advertising,witch is a class that implements interface IAdEventListener, if you do not want to deal with advertising events, you can set it to null.<br/>
+  The  parameter is the config info of each platform in json string format,json format reference template.<br/>
+
 
     You can Setup and   initialize keymob with Keymob.com service also,that will been more easy to use.
 ```
 	keymob.initFromKeymobService("1", true);
 ```
-   The first parameter  is context active, it as necessary, and can not be null.
-   The second parameter is ID got from Keymob.com
-   The third parameter is   event listener of advertising,witch is a class that implements interface IAdEventListener, if you do not want to deal with advertising events, you can set it to null.<br/>
-   The fourth parameter is test mode switch，if you are testing ad set  true，change to false when publish
+   The first parameter is ID got from Keymob.com
+   The second parameter is test mode switch，if you are testing ad set  true，change to false when publish
    
    Tip: ID can be got  from www.keymob.com  .
 
