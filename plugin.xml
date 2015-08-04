@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com.keymob.plugin.cordova"
+        version="1.0.0">
+    <name>KeymobPlugin</name>
+    <keywords>Keymob,ad,admob,google,google-play-service,iad,flurry,device,adwhirl,xdk,jquery,intel
+        appframework,jqmob,cordova,phonegap,ads,html5,js
+    </keywords>
+    <description>
+        Keymob plugin for Cordova, Phonegap and Intel XDK ,support ios and android,support
+        admob,iad,baidu,inmobi,mmedia,amazon and so on ,Monetize your app with one javascript line.simple and easy to
+        use api.
+        project home:https://github.com/admob-google/admob-phonegap
+        <br/>
+    </description>
+    <license>Apache 2.0 License</license>
+    <repo>https://github.com/admob-google/admob-cordova</repo>
+    <issue>https://github.com/admob-google/admob-cordova/issues</issue>
+    <js-module src="www/KeymobPlugin.js" name="KeymobPlugin">
+        <clobbers target="window.keymob"/>
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="KeymobPlugin">
+                <param name="android-package" value="com.keymob.plugin.cordova.KeymobPlugin"/>
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+
+            <!--Admob Ads -->
+            <meta-data android:name="com.google.android.gms.version"
+                       android:value="7327000"/>
+            <activity
+                    android:name="com.google.android.gms.ads.AdActivity"
+                    android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+                    android:theme="@android:style/Theme.Translucent"/>
+
+            <!-- Amazon Mobile Ads -->
+            <activity android:name="com.amazon.device.ads.AdActivity"
+                      android:configChanges="keyboardHidden|orientation|screenSize"/>
+
+            <!-- InMobi -->
+            <activity android:name="com.inmobi.androidsdk.IMBrowserActivity"
+                      android:configChanges="keyboardHidden|orientation|keyboard|smallestScreenSize|screenSize"
+                      android:theme="@android:style/Theme.Translucent.NoTitleBar"
+                      android:hardwareAccelerated="true"/>
+
+
+            <!-- Millennial Media -->
+            <activity android:name="com.millennialmedia.android.MMActivity"
+                      android:theme="@android:style/Theme.Translucent.NoTitleBar"
+                      android:configChanges="keyboardHidden|orientation|keyboard|screenSize"></activity>
+
+            <!-- Keymob -->
+            <activity android:name="com.keymob.sdk.core.KeymobActivity" android:theme="@android:style/Theme.Dialog"
+                      android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+                    />
+            <!-- baidu -->
+            <activity android:name="com.baidu.mobads.AppActivity"
+                      android:configChanges="keyboard|keyboardHidden|orientation"/>
+
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+            <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+        </config-file>
+
+        <source-file src="src/android/libs/keymobplugin.jar" target-dir="libs/"/>
+        <source-file src="src/android/libs/keymobad.jar" target-dir="libs/"/>
+    </platform>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="KeymobPlugin">
+                <param name="ios-package" value="KeymobPlugin"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/ios/KeymobPlugin.m"/>
+        <header-file src="src/ios/KeymobPlugin.h"/>
+        <framework src="src/ios/KeymobAd.framework" custom="true"/>
+
+        <framework src="EventKit.framework"/>
+        <framework src="EventKitUI.framework"/>
+        <framework src="StoreKit.framework"/>
+        <framework src="AdSupport.framework"/>
+        <framework src="MessageUI.framework"/>
+        <framework src="AVFoundation.framework"/>
+        <framework src="Foundation.framework"/>
+        <framework src="UIKit.framework"/>
+        <framework src="CoreGraphics.framework"/>
+        <framework src="SystemConfiguration.framework"/>
+        <framework src="AudioToolbox.framework"/>
+    </platform>
+</plugin>
