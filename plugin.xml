@@ -83,9 +83,9 @@
 
         <source-file src="src/android/libs/keymobplugin.jar" target-dir="libs/"/>
         <source-file src="src/android/libs/keymobad.jar" target-dir="libs/"/>
-         <source-file src="sdk/android/assets/com_keymob_sdks" target-dir="assets/"/>
-         <source-file src="sdk/android/assets/biduad_plugin" target-dir="assets/"/>
-         <source-file src="sdk/android/assets/gdt_plugin" target-dir="assets/"/>
+         <source-file src="src/android/assets/com_keymob_sdks" target-dir="assets/"/>
+         <source-file src="src/android/assets/biduad_plugin" target-dir="assets/"/>
+         <source-file src="src/android/assets/gdt_plugin" target-dir="assets/"/>
     </platform>
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
