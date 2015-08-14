@@ -60,6 +60,16 @@
             <activity android:name="com.baidu.mobads.AppActivity"
                       android:configChanges="keyboard|keyboardHidden|orientation"/>
 
+			<!-- adcolony -->     
+			<activity android:name="com.jirbo.adcolony.AdColonyOverlay" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+			<activity android:name="com.jirbo.adcolony.AdColonyFullscreen" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+			<activity android:name="com.jirbo.adcolony.AdColonyBrowser" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+
+			<!-- guang dian tong -->     
+			<service android:name="com.qq.e.comm.DownloadService" android:exported="false"/>
+			<activity android:name="com.qq.e.ads.ADActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenSize"/>
+			   
+   
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -73,6 +83,9 @@
 
         <source-file src="src/android/libs/keymobplugin.jar" target-dir="libs/"/>
         <source-file src="src/android/libs/keymobad.jar" target-dir="libs/"/>
+         <source-file src="sdk/android/assets/com_keymob_sdks" target-dir="assets/"/>
+         <source-file src="sdk/android/assets/biduad_plugin" target-dir="assets/"/>
+         <source-file src="sdk/android/assets/gdt_plugin" target-dir="assets/"/>
     </platform>
     <platform name="ios">
         <config-file target="config.xml" parent="/*">

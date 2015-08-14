@@ -55,7 +55,7 @@
         //keymob.showInterstitial();//show it when received
     }
     function onReceiveFail(message) {
-        document.getElementById("alertdiv").innerHTML = message.adtype+"load fail: " + message.data;
+        document.getElementById("alertdiv").innerHTML =document.getElementById("alertdiv").innerHTML+"<br/>"+ message.adtype+"load fail: " + message.data;
     }
     function onDeviceReady() {
         keymob.initFromKeymobService("1", true);
