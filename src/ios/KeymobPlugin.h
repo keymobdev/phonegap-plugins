@@ -6,8 +6,8 @@
 - (void)initFromJSON:(CDVInvokedUrlCommand *)command ;
 
 - (void)removeBanner:(CDVInvokedUrlCommand *)command;
-- (void)showBannerAbsolute:(CDVInvokedUrlCommand *)command;
-- (void)showBannerRelation:(CDVInvokedUrlCommand *)command;
+- (void)showBannerABS:(CDVInvokedUrlCommand *)command;
+- (void)showRelationBanner:(CDVInvokedUrlCommand *)command;
 
 - (void)isInterstitialReady:(CDVInvokedUrlCommand *)command ;
 - (void)showInterstitial:(CDVInvokedUrlCommand *)command;
