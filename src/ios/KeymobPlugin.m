@@ -3,7 +3,7 @@
 @implementation KeymobPlugin
 #pragma mark   private util Function------------------
 -(void) fireEvent:(NSString*) eventType withEventData:(NSString*) jsonData{
-    NSString *js =@"cordova.fireDocumentEvent('%@','%@');";
+    NSString *js =@"cordova.fireDocumentEvent('%@',%@);";
     NSString *json=[NSString stringWithFormat:js,eventType,jsonData];
     [self.commandDelegate evalJs:json];
     // [self writeJavascript:json];

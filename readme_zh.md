@@ -1,6 +1,6 @@
 keymob 是一个简单易用的广告管理库。
 使用keymob能非常方便的管理应用中各个广告平台的广告，包括展示哪些平台的广告，各个平台的比例，优先顺序等。
-支持admob,chartboost,inmobi.mmedia,amazon,iad,baidu等常用广告平台，后面会根据大家的反馈加入更多的常见平台的支持。
+支持admob,chartboost,inmobi.mmedia,amazon,iad,baidu,adcolony,gdt等常用广告平台，后面会根据大家的反馈加入更多的常见平台的支持。
 广告形式支持丰富，包括各种尺寸的banner广告，方块广告，全屏广告，视频广告，应用墙广告等当前流行的广告。
 使用时把各个平台的广告ID和比例优先级顺序等信息配置在www.keymob.com 管理处或者按json格式配置，json配置文件可以放项目里，自己的网站服务器或者第三方管理平台服务器。
 
@@ -12,18 +12,6 @@ keymob 是一个简单易用的广告管理库。
 
 	cordova plugin add d:\keymobplugin
    
-   这样就把keymob 插件安装到项目了，能够使用keymob的自家广告交叉推广等功能，如果要展示第三方广告还需要添加第三方广告SDK
-   
-   添加第三方平台Android 插件。Keymob采用服务器端集成第三方SdK方式，无需手动添加第三方SDK，
-   为了确保万无一失，可以从keymobplugin\sdk\android\目录下复制一个插件到assets/com_keymob_sdks/目录中，在服务器端集成失败的时候使用
-   注意：jar文件名称不能修改
-
-   添加第三方平台IOS插件。第三方平台SDK在keymobplugin\sdk\ios\目录下，把使用到的广告平台库添加到xcode工程中中。
-   右击Xcode工程，选择“添加文件到工程”菜单选择keymobplugin\sdk\ios\下的平台目录添加到工程，
-   例如使用了Admob ,则把目录keymobplugin\sdk\ios\Admob 添加到工程中
-   然后添加Other Linker Flag 把平台的库添加进去，例如使用了Admob 则添加记录
-   -force_load {your path contain keymob}/keymobplugin/sdk/ios/Admob/libAdmobAdapter.a
-
 2.添加代码
  a.通过json配置文件设置和初始化各个广告平台信息
 
@@ -141,7 +129,19 @@ h. 处理广告事件，如果要处理广告事件，可以添加事件监听�
         //keymob.showInterstitial();//show it when received
     }
  document.addEventListener(keymob.AdEvent.ON_LOADED_SUCCESS, onAdReceive, false);
-3.广告平台配置文件模板
+
+3.针对IOS平台处理
+  把自己需要的平台库添加到项目路径中，用xcode打开工程项目，然后右击项目，选择添加文件到工程，找到iosadapters下的需要的平台库
+  如果使用了广点通平台，则需要添加  -lstdc++   到 Other Linker Flags,设置的方式是单机工程文件，选择build settings 然后搜索Other Linker Flags
+4.针对Android平台处理（优化处理，非必须）
+  在生成的android工程assets目录下面有三个文件夹，
+  biduad_plugin是百度广告需要的文件，如果未使用百度广告可以删除
+  gdt_plugin   是广点通广告需要的文件，如果未使用广点通广告可以删除
+  com_keymob_sdks  是Keymob平台默认广告，在无法连接keymob的情况下会使用默认平台，如果想使用别的平台作为默认平台可以从
+  https://github.com/keymobdev/admob-adapter下载放在com_keymob_sdks下
+  注意：文件夹和jar文件名称不能修改
+
+5.广告平台配置文件模板
 	{
 		"isTesting":true,//是否是测试模式
 		"rateModel":1,//广告平台排序规则，0表示priority是权重，各个平台按比例显示广告，1表示priority是顺序，各个平台按顺序展示广告
@@ -159,4 +159,4 @@ h. 处理广告事件，如果要处理广告事件，可以添加事件监听�
 
 priority会根据ratemodel不同而成为比重或者排序号。class表示平台实现,不能随意修改。
 
-项目地址:https://github.com/keymobdev/cordova-plugin-ad
+项目地址:https://github.com/keymobdev/cordova-ad-plugin

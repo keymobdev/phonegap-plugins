@@ -1,6 +1,6 @@
 ### Keymob is a simple lib to manage ad 
 Keymob can be very easy to use management  various advertising platforms in application, including which platform ad impressions, the proportion of each platform, setting priorities.<br/>
-Support admob, chartboost, inmobi.mmedia, amazon, iad, baidu and other common advertising platform, more  platforms will been supported.<br/>
+Support admob, chartboost, inmobi.mmedia, amazon, iad, baidu ,adcolony,gdt and other common advertising platform, more  platforms will been supported.<br/>
 Support rich forms of advertising, including the popular  banner  a variety of sizes, rect ads, Interstitial ads, video ads, More APP Ad.<br/>
 Ad config can been managed in  www.keymob.com ,  modify and adjust easy, you can config keymob with json format file , and then put it in  the project or on the website.<br/>
 
@@ -11,17 +11,6 @@ Ad config can been managed in  www.keymob.com ,  modify and adjust easy, you can
 
 	cordova plugin add d:\keymobplugin
    
-keymob will been installed to the project, and you can  used keymob cross-promotion and  home advertising ,but if you want to display ads from network such as admob need to add  third-party SDK<br/>
-   
-For Android Keymob will integrate third-party ad on server,without having to add third-party SDK,to ensure app can load ad success when ,you can copy one plugin lib from "keymobplugin\sdk\android\"  to assets "assets\com_keymob_sdks\"<br/>
-Note: jar file name can not be modified<br/>
-
-For IOS app,Third-party platform SDK is under folder "keymobplugin\sdk\ios\".<br/>
-Right click project in Xcode and choose menu "Add Files to Project" add platform related folder to xcode project.<br/>
-Then add "Other Linker Flag" item of xcode project.<br/>
-e.g. You used Admob ,add a item like following.<br/>
-
-	-force_load {your path contain keymob} /keymobplugin/sdk/ios/Admob/libAdmobAdapter.a  <br/>
 
 ###  2.Add Code
 
@@ -141,7 +130,19 @@ h. handler ad event
     }
     document.addEventListener(keymob.AdEvent.ON_LOADED_SUCCESS, onAdReceive, false);
 ```
-### 3.Advertising platform configuration file template
+
+### 3  processing for ios
+open  project with xcode ,right click project choose menu item "add files to project" to add third-party lib  in folder "iosadapters"
+if you are using gdt,need add   -lstdc++   to Other Linker Flags  under tab "Build Setttings"
+### 4 Optimized for android
+In the android project There are three folders
+biduad_plugin  lib for baidu platform,if you not plan to use baidu,you can delete it.
+gdt_plugin  lib for gdt platform,if you not plan to use gdt,you can delete it.
+com_keymob_sdks default platform used when connect keymob.com fail,you can download and use other platform as the default platform.https://github.com/keymobdev/admob-adapter
+Note:file name and folder name can not been changed.
+
+
+### 5.Advertising platform configuration file template
 
 ```
 	{

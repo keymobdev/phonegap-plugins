@@ -5,18 +5,18 @@
         version="1.0.0">
     <name>KeymobPlugin</name>
     <keywords>Keymob,ad,admob,google,google-play-service,iad,flurry,device,adwhirl,xdk,jquery,intel
-        appframework,jqmob,cordova,phonegap,ads,html5,js
+        appframework,jqmob,cordova,phonegap,ads,html5,js,adcolony,amazon
     </keywords>
     <description>
         Keymob plugin for Cordova, Phonegap and Intel XDK ,support ios and android,support
-        admob,iad,baidu,inmobi,mmedia,amazon and so on ,Monetize your app with one javascript line.simple and easy to
+        admob,iad,baidu,inmobi,mmedia,amazon ,gdt,adclony and so on ,Monetize your app with one javascript line.simple and easy to
         use api.
-        project home:https://github.com/admob-google/admob-phonegap
+        project home:https://github.com/keymobdev/cordova-ad-plugin
         <br/>
     </description>
     <license>Apache 2.0 License</license>
-    <repo>https://github.com/admob-google/admob-cordova</repo>
-    <issue>https://github.com/admob-google/admob-cordova/issues</issue>
+    <repo>https://github.com/keymobdev/cordova-ad-plugin</repo>
+    <issue>https://github.com/keymobdev/cordova-ad-plugin/issues</issue>
     <js-module src="www/KeymobPlugin.js" name="KeymobPlugin">
         <clobbers target="window.keymob"/>
     </js-module>
@@ -109,5 +109,13 @@
         <framework src="CoreGraphics.framework"/>
         <framework src="SystemConfiguration.framework"/>
         <framework src="AudioToolbox.framework"/>
+        
+         <framework src="CoreLocation.framework"/>
+        <framework src="CoreMotion.framework"/>
+        <framework src="Social.framework"/>
+        <framework src="WebKit.framework"/>
+         <framework src="libz.dylib"/>
+         <framework src="libsqlite3.dylib"/>
+         <!-- add other linker flag   -lstdc++ -->
     </platform>
 </plugin>
