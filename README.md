@@ -132,14 +132,14 @@ h. handler ad event
 ```
 
 ### 3  processing for ios
-open  project with xcode ,right click project choose menu item "add files to project" to add third-party lib  in folder "iosadapters"
-if you are using gdt,need add   -lstdc++   to Other Linker Flags  under tab "Build Setttings"
+open  project with xcode ,right click project choose menu item "add files to project" to add third-party lib  in folder "iosadapters"<br/>
+if you are using gdt,need add   -lstdc++   to Other Linker Flags  under tab "Build Setttings"<br/>
 ### 4 Optimized for android
-In the android project There are three folders
-biduad_plugin  lib for baidu platform,if you not plan to use baidu,you can delete it.
-gdt_plugin  lib for gdt platform,if you not plan to use gdt,you can delete it.
-com_keymob_sdks default platform used when connect keymob.com fail,you can download and use other platform as the default platform.https://github.com/keymobdev/admob-adapter
-Note:file name and folder name can not been changed.
+In the android project There are three folders<br/>
+biduad_plugin  lib for baidu platform,if you not plan to use baidu,you can delete it.<br/>
+gdt_plugin  lib for gdt platform,if you not plan to use gdt,you can delete it.<br/>
+com_keymob_sdks default platform used when connect keymob.com fail,you can download and use other platform as the default platform.https://github.com/keymobdev/admob-adapter<br/>
+Note:file name and folder name can not been changed.<br/>
 
 
 ### 5.Advertising platform configuration file template
