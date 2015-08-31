@@ -164,3 +164,4 @@ Note:file name and folder name can not been changed.<br/>
 Depending rate model priority will become the sort number or proportion.All keyName in config can not been modified."class" is platform implement can not be modified.<br/>
 
 project home : https://github.com/keymobdev/phonegap-plugins
+qq group :310513042
