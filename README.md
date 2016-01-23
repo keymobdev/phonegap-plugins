@@ -132,7 +132,7 @@ h. handler ad event
 ```
 
 ### 3  processing for ios
-open  project with xcode ,right click project choose menu item "add files to project" to add third-party lib  in folder "iosadapters"<br/>
+delete unsed platform from iosadapter and then copy iosadapters folder to xcode project folder,open  project with xcode ,right click project choose menu item "add files to project" to add third-party lib  in folder "iosadapters"<br/>
 if you are using gdt,need add   -lstdc++   to Other Linker Flags  under tab "Build Setttings"<br/>
 ### 4 Optimized for android
 In the android project There are three folders<br/>

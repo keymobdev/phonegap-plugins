@@ -131,7 +131,8 @@ h. 处理广告事件，如果要处理广告事件，可以添加事件监听�
  document.addEventListener(keymob.AdEvent.ON_LOADED_SUCCESS, onAdReceive, false);
 
 3.针对IOS平台处理
-  把自己需要的平台库添加到项目路径中，用xcode打开工程项目，然后右击项目，选择添加文件到工程，找到iosadapters下的需要的平台库
+  把iosadapters文件夹复制到xcode工程目录下，用xcode打开工程项目，然后右击项目，选择添加文件到工程，把iosadapters添加到xcode工程中
+   不使用的平台从iosadapters目录下删除
   如果使用了广点通平台，则需要添加  -lstdc++   到 Other Linker Flags,设置的方式是单机工程文件，选择build settings 然后搜索Other Linker Flags
 4.针对Android平台处理（优化处理，非必须）
   在生成的android工程assets目录下面有三个文件夹，

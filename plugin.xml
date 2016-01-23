@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="com.keymob.plugin.cordova"
-        version="1.0.1">
+        version="1.0.2">
     <name>KeymobPlugin</name>
     <keywords>Keymob,ad,admob,google,google-play-service,iad,flurry,device,adwhirl,xdk,jquery,intel
         appframework,jqmob,cordova,phonegap,ads,html5,js,adcolony,amazon
@@ -147,8 +147,9 @@
         <framework src="CoreMotion.framework"/>
         <framework src="Social.framework"/>
         <framework src="WebKit.framework"/>
-         <framework src="libz.dylib"/>
-         <framework src="libsqlite3.dylib"/>
+         <framework src="libz.tbd"/>
+         <framework src="libsqlite3.tbd"/>
+         <framework src="libxml2.2.tbd"/>
          <!-- add other linker flag   -lstdc++ -->
     </platform>
 </plugin>

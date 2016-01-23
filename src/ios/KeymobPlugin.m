@@ -37,7 +37,8 @@
     NSLog(@" appid info %@", [params objectForKey:@"appID"]);
     NSString *appid=[params objectForKey:@"appID"];
     BOOL isTesting= [[params objectForKey:@"isTesting"] boolValue];
-    [[AdManager sharedInstance] setController:self.viewController andListener:self];
+     [AdManager sharedInstance].listener=self;
+    [AdManager sharedInstance].controller=self.viewController;
     [[AdManager sharedInstance] configWithKeymobService:appid isTesting:isTesting];
     [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK] callbackId:command.callbackId];
 }
@@ -45,7 +46,8 @@
     NSDictionary *params = [command argumentAtIndex:0];
     NSString* json= [self dicToJSON:params];
     if(json!=nil){
-        [[AdManager sharedInstance] setController:self.viewController andListener:self];
+         [AdManager sharedInstance].listener=self;
+    [AdManager sharedInstance].controller=self.viewController;
         [[AdManager sharedInstance] configWithJSON:json];
         [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK] callbackId:command.callbackId];
     }else{
