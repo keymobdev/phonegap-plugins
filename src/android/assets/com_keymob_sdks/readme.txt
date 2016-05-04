@@ -1,0 +1,1 @@
+you can put one adapter in this folder for the app the first time start up
